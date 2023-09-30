@@ -20,7 +20,7 @@ class AddNoteViewController: UIViewController {
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
-        
+        print("Unwind segue!")
         
     }
     
@@ -29,7 +29,7 @@ class AddNoteViewController: UIViewController {
     
     // MARK: - Navigation
 
-    override func prepare( for segue: UIStoryboardSegue, sender: Any?){
+    override func prepare( for segue: UIStoryboardSegue, sender: (Any)?){
         
         newNote = Note(title: noteTitle.text!, content: noteContent.text!, date: Date())
         let destination = segue.destination as! NotesTableViewController
