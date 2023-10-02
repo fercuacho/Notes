@@ -14,6 +14,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noteCell" textLabel="FRr-1X-BkZ" detailTextLabel="FWn-x4-BO1" rowHeight="100" style="IBUITableViewCellStyleSubtitle" id="F2R-ho-d0c" customClass="NoteCell" customModule="Notes" customModuleProvider="target">
@@ -167,6 +168,11 @@
                         <outlet property="noteContent" destination="Uqx-pL-5XP" id="Cfq-Au-WOk"/>
                         <outlet property="noteTitle" destination="VwK-Rl-Rgp" id="pVo-Oa-Yt4"/>
                     </connections>
+=======
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+>>>>>>> parent of f04fe35 (Practica Notes)
 =======
                         <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
