@@ -40,10 +40,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="noteDate" destination="FWn-x4-BO1" id="6Dp-91-8Ct"/>
-                                    <outlet property="noteTitle" destination="FRr-1X-BkZ" id="1yU-0g-YXs"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -61,8 +57,8 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="emptyNotesView" destination="a8b-0r-qBE" id="bJd-1v-0mF"/>
-                        <outlet property="tableViewNotes" destination="Wmb-9P-nP4" id="cc5-eY-mtM"/>
+                        <outlet property="emptyNotesView" destination="a8b-0r-qBE" id="Lg8-26-4ih"/>
+                        <outlet property="tableViewNotes" destination="Wmb-9P-nP4" id="AXf-QP-WDp"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BEm-u4-aOu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -71,7 +67,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notes.png" translatesAutoresizingMaskIntoConstraints="NO" id="nnC-TL-5MF">
-                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <rect key="frame" x="0.0" y="47" width="240" height="81"/>
                         </imageView>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="bOY-OW-EQ2"/>
@@ -160,7 +156,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="kcu-Eq-8fQ">
                             <connections>
-                                <action selector="unWindFromAddNoteViewController:" destination="Jc9-k4-HCL" id="INh-cd-1La"/>
+                                <segue destination="Jc9-k4-HCL" kind="unwind" unwindAction="unWindToNoteWithSegue:" id="kDB-i5-NQc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
