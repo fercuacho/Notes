@@ -34,6 +34,10 @@ class NoteManager {
         return notes
     }
     
+    func indexOfNote(withTitle title: String) -> Int? {
+        return notes.firstIndex { $0.title == title }
+    }
+    
     func loadNotes(){
         //set directory for save json file
         let fileManager = FileManager.default
@@ -72,8 +76,9 @@ class NoteManager {
         }
     }
     
-    func updateNote(note : Note, at index : Int){
-        
+    func updateNote(at index: Int, with updatedNote: Note) {
+        notes[index] = updatedNote
+        saveNotes()
     }
     
 }

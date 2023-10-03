@@ -88,10 +88,14 @@ class NotesTableViewController: UITableViewController {
         
          // MARK: - Navigation
          
-         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-         }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editNoteSegue" {
+            if let addNoteViewController = segue.destination as? AddNoteViewController,
+               let selectedNote = sender as? Note {
+                addNoteViewController.noteToEdit = selectedNote
+            }
+        }
+    }
          
     @IBAction func unWindToNote (segue: UIStoryboardSegue){
         if let source = segue.source as? AddNoteViewController {
