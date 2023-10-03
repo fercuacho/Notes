@@ -66,7 +66,7 @@ class NoteManager {
         do{
             let jsonData = try JSONEncoder().encode(notes)
             print("path", notesPath.absoluteString)
-            fileManager.createFile(atPath: notesPath.absoluteString, contents: jsonData)
+            fileManager.createFile(atPath: notesPath.path, contents: jsonData)
         }catch let error{
             print(error)
         }

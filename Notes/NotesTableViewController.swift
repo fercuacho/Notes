@@ -24,6 +24,7 @@ class NotesTableViewController: UITableViewController {
         }
         else {
             emptyNotesView.isHidden = true
+            tableViewNotes.reloadData()
         }
     }
     
@@ -61,6 +62,10 @@ class NotesTableViewController: UITableViewController {
             if editingStyle == .delete {
                 //Delete ...
                 print("Delete...")
+                noteManager.deleteNote(at: indexPath.row)
+                noteManager.saveNotes()
+                // Reload the table view to reflect the updated data source
+                tableView.reloadData()
             }
         }
          
@@ -88,15 +93,14 @@ class NotesTableViewController: UITableViewController {
          // Pass the selected object to the new view controller.
          }
          
-        @IBAction func unWindToNote (segue: UIStoryboardSegue){
-            let source = segue.source as! AddNoteViewController
-            note = source.newNote
-            noteManager.createNote(note: note!)
-            print("#", noteManager.countNotes())
-            print("notes: ", noteManager.getNotes())
-            noteManager.saveNotes()
-            tableViewNotes.reloadData()
-        }
+    @IBAction func unWindToNote (segue: UIStoryboardSegue){
+        if let source = segue.source as? AddNoteViewController {
+                note = source.newNote
+                noteManager.createNote(note: note!)
+                noteManager.saveNotes()
+                tableViewNotes.reloadData()
+            }
+    }
         
         
     

@@ -9,8 +9,10 @@ import UIKit
 
 class AddNoteViewController: UIViewController {
 
-    @IBOutlet weak var noteTitle: UILabel!
-    @IBOutlet weak var noteContent: UILabel!
+    @IBOutlet weak var noteTitle: UITextView!
+    
+    @IBOutlet weak var noteContent: UITextView!
+    
     var newNote : Note?
     
     override func viewDidLoad() {
@@ -21,7 +23,7 @@ class AddNoteViewController: UIViewController {
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
         print("Unwind segue!")
-        
+        dismiss(animated: true, completion: nil)
     }
     
     
@@ -37,8 +39,22 @@ class AddNoteViewController: UIViewController {
         
     }
     
+    
+    
      override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        return true
+         if identifier == "unwindSegue" {
+                 // Validar los campos aquí
+                 if noteTitle.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ||
+                    noteContent.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                     // Muestra una alerta al usuario informando que los campos son obligatorios
+                     let alertController = UIAlertController(title: "Campos obligatorios", message: "Tanto el título como el contenido son obligatorios.", preferredStyle: .alert)
+                     let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                     alertController.addAction(okAction)
+                     present(alertController, animated: true, completion: nil)
+                     return false
+                 }
+             }
+             return true
     }
     
 

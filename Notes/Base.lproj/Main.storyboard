@@ -41,6 +41,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="noteDate" destination="FWn-x4-BO1" id="ZwN-6v-I7V"/>
+                                    <outlet property="noteTitle" destination="FRr-1X-BkZ" id="tkq-WI-jXu"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -157,13 +161,13 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="kcu-Eq-8fQ">
                             <connections>
-                                <segue destination="Jc9-k4-HCL" kind="unwind" unwindAction="unWindToNoteWithSegue:" id="kDB-i5-NQc"/>
+                                <segue destination="Jc9-k4-HCL" kind="unwind" identifier="unwindSegue" unwindAction="unWindToNoteWithSegue:" id="kDB-i5-NQc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="noteContent" destination="Uqx-pL-5XP" id="Cfq-Au-WOk"/>
-                        <outlet property="noteTitle" destination="VwK-Rl-Rgp" id="pVo-Oa-Yt4"/>
+                        <outlet property="noteContent" destination="hbj-W4-dLA" id="VaX-uC-LBY"/>
+                        <outlet property="noteTitle" destination="122-L6-qRp" id="wKJ-Ml-FM5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cdk-g8-DdO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
