@@ -44,6 +44,7 @@
                                 <connections>
                                     <outlet property="noteDate" destination="FWn-x4-BO1" id="ZwN-6v-I7V"/>
                                     <outlet property="noteTitle" destination="FRr-1X-BkZ" id="tkq-WI-jXu"/>
+                                    <segue destination="xg2-oJ-6E3" kind="presentation" identifier="editNoteSegue" id="BYe-7H-qy5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -56,7 +57,7 @@
                     <navigationItem key="navigationItem" id="DM7-nV-F8L">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6zU-GE-lKx">
                             <connections>
-                                <segue destination="r3k-Cv-xHQ" kind="presentation" id="79v-aX-7wJ"/>
+                                <segue destination="r3k-Cv-xHQ" kind="presentation" identifier="" id="79v-aX-7wJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -96,7 +97,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VwK-Rl-Rgp">
-                                <rect key="frame" x="16" y="66" width="358" height="20"/>
+                                <rect key="frame" x="16" y="57" width="358" height="20"/>
                                 <accessibility key="accessibilityConfiguration" label="Title"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="jWU-uu-AvE"/>
@@ -106,7 +107,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="122-L6-qRp">
-                                <rect key="frame" x="16" y="96" width="358" height="20"/>
+                                <rect key="frame" x="16" y="87" width="358" height="20"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="bdo-T1-fbF"/>
@@ -116,7 +117,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uqx-pL-5XP">
-                                <rect key="frame" x="16" y="136" width="358" height="20"/>
+                                <rect key="frame" x="16" y="127" width="358" height="20"/>
                                 <accessibility key="accessibilityConfiguration" label="Content"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="zd2-eb-dO4"/>
@@ -126,7 +127,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hbj-W4-dLA">
-                                <rect key="frame" x="16" y="166" width="358" height="150"/>
+                                <rect key="frame" x="16" y="157" width="358" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="igJ-r2-eeV"/>
@@ -209,9 +210,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IxM-pz-ey0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2568" y="-28"/>
+            <point key="canvasLocation" x="2548" y="-547"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="BYe-7H-qy5"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="notes.png" width="1400" height="1050"/>
         <systemColor name="labelColor">

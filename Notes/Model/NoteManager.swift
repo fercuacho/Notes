@@ -76,9 +76,12 @@ class NoteManager {
         }
     }
     
-    func updateNote(at index: Int, with updatedNote: Note) {
-        notes[index] = updatedNote
-        saveNotes()
+    func updateNote(with updatedNote: Note) {
+        if let index = notes.firstIndex(where: { $0.id == updatedNote.id }) {
+            notes[index] = updatedNote
+            saveNotes()
+        }
     }
+    
     
 }

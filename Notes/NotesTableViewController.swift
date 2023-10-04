@@ -68,6 +68,12 @@ class NotesTableViewController: UITableViewController {
                 tableView.reloadData()
             }
         }
+    
+        override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let selectedNote = noteManager.getNote(at: indexPath.row)
+            performSegue(withIdentifier: "editNoteSegue", sender: selectedNote)
+        }
+
          
         
         /*
@@ -96,6 +102,9 @@ class NotesTableViewController: UITableViewController {
             }
         }
     }
+    
+    
+    
          
     @IBAction func unWindToNote (segue: UIStoryboardSegue){
         if let source = segue.source as? AddNoteViewController {
